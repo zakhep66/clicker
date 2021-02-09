@@ -25,7 +25,7 @@ SECRET_KEY = '^a6#8idnr6fiqh1!at!+3o$lo+aek&0^f!m^5cr^t^=*7zzye&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clicker.std-1305.ist.mospolytech.ru']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'rest_framework'
 ]
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

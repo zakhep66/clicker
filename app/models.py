@@ -4,8 +4,7 @@ from django.db import models
 class Owner(models.Model):
 
     nick = models.CharField(max_length=50)
-    total_data = models.PositiveIntegerField(default=0)
-    level = models.PositiveIntegerField(default=0)
+    total_data = models.BigIntegerField(default=0)
 
     class Meta:
 
