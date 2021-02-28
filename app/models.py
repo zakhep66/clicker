@@ -12,4 +12,9 @@ class Owner(models.Model):
         verbose_name_plural = 'Owners'
 
     def __str__(self):
-        return "Пользователь: {} с айди: {}".format(self.nick, self.id)
+        if self.id == 1:
+            return 'Admin Nike: "{}"'.format(self.nick)
+        elif self.id == 2:
+            return 'Admin Nick: "{}", ID: "{}"'.format(self.nick, self.id)
+        else:
+            return 'Nick: "{}", ID: "{}"'.format(self.nick, self.id)
